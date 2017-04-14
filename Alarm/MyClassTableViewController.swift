@@ -9,39 +9,9 @@
 import UIKit
 import FirebaseAuth
 
-class MyClassTableViewController: UITableViewController {
+class MyClassTableViewController: UITableViewController{
     
-    @IBOutlet weak var logoutBtn:UIBarButtonItem!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        if FIRAuth.auth()?.currentUser == nil
-        {
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInStoryboard") as! LogInController
-            
-            let navController = UINavigationController(rootViewController: loginVC)
-            self.present(navController, animated: true, completion: nil)
-        }
-    }
-    
-    @IBAction func logoutClick(_ sender: Any)
-    {
-        logout()
-        if FIRAuth.auth()?.currentUser == nil
-        {
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInStoryboard") as! LogInController
-            
-            let navController = UINavigationController(rootViewController: loginVC)
-            self.present(navController, animated: true, completion: nil)
-        }
-        
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    @IBOutlet weak var classTableView: UITableView!
     
     func logout()
     {
@@ -53,16 +23,49 @@ class MyClassTableViewController: UITableViewController {
         {
             print(error.localizedDescription)
         }
+        
+        if FIRAuth.auth()?.currentUser == nil
+        {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInStoryboard") as! LogInController
+            self.present(loginVC, animated: true, completion: nil)
+        }
     }
-
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        if FIRAuth.auth()?.currentUser == nil
+        {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInStoryboard") as! LogInController
+            self.present(loginVC, animated: true, completion: nil)
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier:"headerCell") as! HeaderTableViewCell
+        cell.signOutBtn.tag = indexPath.row
+        cell.currentDateTime()
+        cell.signOutBtn.addTarget(self, action: "logout", for: .touchUpInside)
+        
+        return cell
+    }
+    
+    
+
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

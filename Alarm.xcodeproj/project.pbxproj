@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		14D8659858DE27C3CDAA092F /* Pods_AlarmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCC27AB157552DD78F1D61F /* Pods_AlarmUITests.framework */; };
 		2A6AC94B0D91F994A9F4489A /* Pods_AlarmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643EA1088D11CB7C04AE8100 /* Pods_AlarmTests.framework */; };
+		B74B921F1E9F0F610044E987 /* alarm clock.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B74B921E1E9F0EF90044E987 /* alarm clock.ttf */; };
+		B74B92231E9F29D10044E987 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B92221E9F29D10044E987 /* HeaderTableViewCell.swift */; };
 		B74DC09C1E8A570400168ACE /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74DC09B1E8A570400168ACE /* LogInController.swift */; };
 		B74DC0A21E8A600600168ACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74DC0A11E8A600600168ACE /* Const.swift */; };
 		B74DC0A41E8A7C0600168ACE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B74DC0A31E8A7C0600168ACE /* GoogleService-Info.plist */; };
@@ -46,6 +48,8 @@
 		6DB0A8146379CE71B39A448F /* Pods-AlarmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlarmTests/Pods-AlarmTests.release.xcconfig"; sourceTree = "<group>"; };
 		872071A207A8C058A7C4007C /* Pods-AlarmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlarmUITests/Pods-AlarmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B01699DFD07FF855BD44893B /* Pods_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74B921E1E9F0EF90044E987 /* alarm clock.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alarm clock.ttf"; sourceTree = "<group>"; };
+		B74B92221E9F29D10044E987 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		B74DC09B1E8A570400168ACE /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		B74DC0A11E8A600600168ACE /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		B74DC0A31E8A7C0600168ACE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -107,6 +111,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B74B921D1E9F0EB20044E987 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B74B921E1E9F0EF90044E987 /* alarm clock.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		B76526BA1E8255F500C3C309 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 		B76526C51E8255F500C3C309 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				B74B921D1E9F0EB20044E987 /* Fonts */,
 				B76526C61E8255F500C3C309 /* AppDelegate.swift */,
 				B76526CA1E8255F500C3C309 /* Main.storyboard */,
 				B76526D01E8255F500C3C309 /* Assets.xcassets */,
@@ -139,8 +152,9 @@
 				B76526D51E8255F500C3C309 /* Info.plist */,
 				B74DC0A31E8A7C0600168ACE /* GoogleService-Info.plist */,
 				B76526CD1E8255F500C3C309 /* Alarm.xcdatamodeld */,
-				B75AC27C1E932BCE004035C0 /* MyClassTableViewController.swift */,
 				B74DC09B1E8A570400168ACE /* LogInController.swift */,
+				B75AC27C1E932BCE004035C0 /* MyClassTableViewController.swift */,
+				B74B92221E9F29D10044E987 /* HeaderTableViewCell.swift */,
 				B74DC0A11E8A600600168ACE /* Const.swift */,
 			);
 			path = Alarm;
@@ -293,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74B921F1E9F0F610044E987 /* alarm clock.ttf in Resources */,
 				B76526D41E8255F500C3C309 /* LaunchScreen.storyboard in Resources */,
 				B74DC0A41E8A7C0600168ACE /* GoogleService-Info.plist in Resources */,
 				B76526D11E8255F500C3C309 /* Assets.xcassets in Resources */,
@@ -463,6 +478,7 @@
 				B74DC09C1E8A570400168ACE /* LogInController.swift in Sources */,
 				B76526CF1E8255F500C3C309 /* Alarm.xcdatamodeld in Sources */,
 				B75AC27D1E932BCE004035C0 /* MyClassTableViewController.swift in Sources */,
+				B74B92231E9F29D10044E987 /* HeaderTableViewCell.swift in Sources */,
 				B74DC0A21E8A600600168ACE /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

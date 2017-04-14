@@ -38,7 +38,7 @@ class LogInController: UIViewController {
             }
             else
             {
-                self.navigationController?.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         })
     }
