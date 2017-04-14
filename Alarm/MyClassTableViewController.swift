@@ -13,6 +13,28 @@ class MyClassTableViewController: UITableViewController{
     
     @IBOutlet weak var classTableView: UITableView!
     
+    @IBOutlet weak var signOutBtn:UIButton!
+    @IBOutlet weak var dateCurrent:UILabel!
+    @IBOutlet weak var headerView:UIView!
+    
+    
+    @IBAction func signOutBtnClick(_ sender:AnyObject)
+    {
+        logout()
+        if FIRAuth.auth()?.currentUser == nil
+        {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInStoryboard") as! LogInController
+            self.present(loginVC, animated: true, completion: nil)
+        }
+    }
+    
+    func currentDateTime (){
+        let date = Date()
+        let formatterDate = DateFormatter()
+        formatterDate.dateStyle = .full
+        dateCurrent.text =  formatterDate.string(from: date)
+    }
+
     func logout()
     {
         do
@@ -23,17 +45,22 @@ class MyClassTableViewController: UITableViewController{
         {
             print(error.localizedDescription)
         }
-        
-        if FIRAuth.auth()?.currentUser == nil
-        {
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInStoryboard") as! LogInController
-            self.present(loginVC, animated: true, completion: nil)
-        }
+    }
+    
+    func setHeadView()
+    {
+        headerView.layer.shadowColor = UIColor.lightGray.cgColor
+        headerView.layer.shadowOpacity = 1
+        headerView.layer.shadowRadius = 5.0
+        headerView.layer.shadowOffset = CGSize.init(width: 0.0, height: 8.0)
+        headerView.layer.masksToBounds = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentDateTime()
+        setHeadView()
         
         
         if FIRAuth.auth()?.currentUser == nil
@@ -56,13 +83,11 @@ class MyClassTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier:"headerCell") as! HeaderTableViewCell
-        cell.signOutBtn.tag = indexPath.row
-        cell.currentDateTime()
-        cell.signOutBtn.addTarget(self, action: "logout", for: .touchUpInside)
-        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier:"subjectCell") as! SubjectTableViewCell
+        cell.awakeFromNib()
         return cell
     }
+    
     
     
 
