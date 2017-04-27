@@ -9,6 +9,7 @@ target 'Alarm' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'SwiftyJSON'
 
   target 'AlarmTests' do
     inherit! :search_paths

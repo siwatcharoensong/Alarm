@@ -13,7 +13,7 @@
 		B74DC09C1E8A570400168ACE /* LogInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74DC09B1E8A570400168ACE /* LogInController.swift */; };
 		B74DC0A21E8A600600168ACE /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74DC0A11E8A600600168ACE /* Const.swift */; };
 		B74DC0A41E8A7C0600168ACE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B74DC0A31E8A7C0600168ACE /* GoogleService-Info.plist */; };
-		B75AC27D1E932BCE004035C0 /* MyClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75AC27C1E932BCE004035C0 /* MyClassTableViewController.swift */; };
+		B752678D1EA6777800D92272 /* DataControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B752678C1EA6777800D92272 /* DataControl.swift */; };
 		B75C6D011EA079B8002D696F /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C6D001EA079B8002D696F /* SubjectTableViewCell.swift */; };
 		B76526C71E8255F500C3C309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76526C61E8255F500C3C309 /* AppDelegate.swift */; };
 		B76526CC1E8255F500C3C309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76526CA1E8255F500C3C309 /* Main.storyboard */; };
@@ -22,7 +22,13 @@
 		B76526D41E8255F500C3C309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B76526D21E8255F500C3C309 /* LaunchScreen.storyboard */; };
 		B76526DF1E8255F600C3C309 /* AlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76526DE1E8255F600C3C309 /* AlarmTests.swift */; };
 		B76526EA1E8255F600C3C309 /* AlarmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76526E91E8255F600C3C309 /* AlarmUITests.swift */; };
-		CE431631621DD383113A985A /* Pods_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01699DFD07FF855BD44893B /* Pods_Alarm.framework */; };
+		B767C8E61EA1D00F002EBBF2 /* MyClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B767C8E51EA1D00F002EBBF2 /* MyClassViewController.swift */; };
+		B767C8EA1EA1D926002EBBF2 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B767C8E91EA1D926002EBBF2 /* CurrentDate.swift */; };
+		B767C8EC1EA1DB00002EBBF2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B767C8EB1EA1DB00002EBBF2 /* HeaderView.swift */; };
+		B767C8F21EA1ED5A002EBBF2 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B767C8F11EA1ED5A002EBBF2 /* ActionView.swift */; };
+		B767C8F41EA1EDAE002EBBF2 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B767C8F31EA1EDAE002EBBF2 /* SubjectView.swift */; };
+		B79CD9481EB21B0500097696 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B79CD9471EB21B0500097696 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CE431631621DD383113A985A /* Pods_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01699DFD07FF855BD44893B /* Pods_Alarm.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,7 @@
 		B74DC09B1E8A570400168ACE /* LogInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInController.swift; sourceTree = "<group>"; };
 		B74DC0A11E8A600600168ACE /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		B74DC0A31E8A7C0600168ACE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B75AC27C1E932BCE004035C0 /* MyClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClassTableViewController.swift; sourceTree = "<group>"; };
+		B752678C1EA6777800D92272 /* DataControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControl.swift; sourceTree = "<group>"; };
 		B75C6D001EA079B8002D696F /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		B76526C31E8255F500C3C309 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76526C61E8255F500C3C309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,12 @@
 		B76526E51E8255F600C3C309 /* AlarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76526E91E8255F600C3C309 /* AlarmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmUITests.swift; sourceTree = "<group>"; };
 		B76526EB1E8255F600C3C309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B767C8E51EA1D00F002EBBF2 /* MyClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyClassViewController.swift; sourceTree = "<group>"; };
+		B767C8E91EA1D926002EBBF2 /* CurrentDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
+		B767C8EB1EA1DB00002EBBF2 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B767C8F11EA1ED5A002EBBF2 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
+		B767C8F31EA1EDAE002EBBF2 /* SubjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		B79CD9471EB21B0500097696 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Alarm-gnuuteqvitizvxatvdcaiamqnmjs/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		BAF4CE9C85A92954699D64DC /* Pods-AlarmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlarmTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlarmTests/Pods-AlarmTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E14CC725D175CF1346141CDD /* Pods-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.release.xcconfig"; sourceTree = "<group>"; };
 		F13A36479FEC38F2652846A3 /* Pods-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm/Pods-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79CD9481EB21B0500097696 /* SwiftyJSON.framework in Frameworks */,
 				CE431631621DD383113A985A /* Pods_Alarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +117,7 @@
 		7673BA261BE0C3106752C199 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B79CD9471EB21B0500097696 /* SwiftyJSON.framework */,
 				B01699DFD07FF855BD44893B /* Pods_Alarm.framework */,
 				643EA1088D11CB7C04AE8100 /* Pods_AlarmTests.framework */,
 				0CCC27AB157552DD78F1D61F /* Pods_AlarmUITests.framework */,
@@ -144,6 +158,9 @@
 		B76526C51E8255F500C3C309 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				B767C8E21EA1B8D4002EBBF2 /* Model */,
+				B767C8E01EA1B741002EBBF2 /* Controller */,
+				B767C8DF1EA1B6FC002EBBF2 /* View */,
 				B74B921D1E9F0EB20044E987 /* Fonts */,
 				B76526C61E8255F500C3C309 /* AppDelegate.swift */,
 				B76526CA1E8255F500C3C309 /* Main.storyboard */,
@@ -152,10 +169,6 @@
 				B76526D51E8255F500C3C309 /* Info.plist */,
 				B74DC0A31E8A7C0600168ACE /* GoogleService-Info.plist */,
 				B76526CD1E8255F500C3C309 /* Alarm.xcdatamodeld */,
-				B74DC09B1E8A570400168ACE /* LogInController.swift */,
-				B75AC27C1E932BCE004035C0 /* MyClassTableViewController.swift */,
-				B75C6D001EA079B8002D696F /* SubjectTableViewCell.swift */,
-				B74DC0A11E8A600600168ACE /* Const.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -176,6 +189,36 @@
 				B76526EB1E8255F600C3C309 /* Info.plist */,
 			);
 			path = AlarmUITests;
+			sourceTree = "<group>";
+		};
+		B767C8DF1EA1B6FC002EBBF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B75C6D001EA079B8002D696F /* SubjectTableViewCell.swift */,
+				B767C8E91EA1D926002EBBF2 /* CurrentDate.swift */,
+				B767C8EB1EA1DB00002EBBF2 /* HeaderView.swift */,
+				B767C8F11EA1ED5A002EBBF2 /* ActionView.swift */,
+				B767C8F31EA1EDAE002EBBF2 /* SubjectView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B767C8E01EA1B741002EBBF2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B74DC09B1E8A570400168ACE /* LogInController.swift */,
+				B767C8E51EA1D00F002EBBF2 /* MyClassViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B767C8E21EA1B8D4002EBBF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B74DC0A11E8A600600168ACE /* Const.swift */,
+				B752678C1EA6777800D92272 /* DataControl.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		D364FDE5A86C3EB6F1BE8165 /* Pods */ = {
@@ -474,10 +517,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B767C8E61EA1D00F002EBBF2 /* MyClassViewController.swift in Sources */,
+				B767C8EC1EA1DB00002EBBF2 /* HeaderView.swift in Sources */,
 				B76526C71E8255F500C3C309 /* AppDelegate.swift in Sources */,
+				B767C8F21EA1ED5A002EBBF2 /* ActionView.swift in Sources */,
 				B74DC09C1E8A570400168ACE /* LogInController.swift in Sources */,
 				B76526CF1E8255F500C3C309 /* Alarm.xcdatamodeld in Sources */,
-				B75AC27D1E932BCE004035C0 /* MyClassTableViewController.swift in Sources */,
+				B752678D1EA6777800D92272 /* DataControl.swift in Sources */,
+				B767C8EA1EA1D926002EBBF2 /* CurrentDate.swift in Sources */,
+				B767C8F41EA1EDAE002EBBF2 /* SubjectView.swift in Sources */,
 				B75C6D011EA079B8002D696F /* SubjectTableViewCell.swift in Sources */,
 				B74DC0A21E8A600600168ACE /* Const.swift in Sources */,
 			);
@@ -632,6 +680,10 @@
 			baseConfigurationReference = F13A36479FEC38F2652846A3 /* Pods-Alarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Alarm",
+				);
 				INFOPLIST_FILE = Alarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charoensong.Alarm;
@@ -645,6 +697,10 @@
 			baseConfigurationReference = E14CC725D175CF1346141CDD /* Pods-Alarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Alarm",
+				);
 				INFOPLIST_FILE = Alarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charoensong.Alarm;

@@ -1,10 +1,3 @@
-//
-//  LogInController.swift
-//  Alarm
-//
-//  Created by Siwat Charoensong on 3/28/2560 BE.
-//  Copyright © 2560 Siwat Charoensong. All rights reserved.
-//
 
 import UIKit
 import FirebaseAuth
@@ -18,6 +11,11 @@ class LogInController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerKeyboard()
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LogInController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func signInClick(_ sender: Any) {
@@ -47,7 +45,51 @@ class LogInController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func dismissKeyboard() { view.endEditing(true) }
 
+    func registerKeyboard()
+    {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
+    }
+
+    func keyboardWillHide(_ sender:NSNotification)
+    {
+        if userTxt.isEditing || passTxt.isEditing
+        {
+            if let userInfo = sender.userInfo
+            {
+                if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+                {
+                    if self.view.frame.origin.y != 0
+                    {
+                        UIView.animate(withDuration: 0.15, animations: {
+                            self.view.frame.origin.y += keyboardSize.height
+                        })
+                    }
+                }
+            }
+        }
+    }
     
+    func keyboardWillShow(_ sender:NSNotification)
+    {
+        if userTxt.isEditing || passTxt.isEditing
+        {
+            if let userInfo = sender.userInfo
+            {
+                if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+                {
+                    if self.view.frame.origin.y == 0
+                    {
+                        UIView.animate(withDuration: 0.15, animations: {
+                            self.view.frame.origin.y -= keyboardSize.height
+                        })
+                    }
+                }
+            }
+        }
+    }
 
 }
