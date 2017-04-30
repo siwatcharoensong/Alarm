@@ -10,8 +10,8 @@ class MyClassViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var signOutBtn:UIButton!
     @IBOutlet weak var subjectTableView:UITableView!
     
-    var jsonData:[JSON] = []
-    var snapshopKey:[String] = []
+    
+    var snapshopKey = [dataControl]()
     var dataReference:FIRDatabaseReference!
     private var _dataHandle:FIRDatabaseHandle! = nil
     
@@ -29,6 +29,7 @@ class MyClassViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         setDataValue(user: "siwatchahotmailcom")
+
     }
     
     @IBAction func signOutBtnClick(_ sender:AnyObject)
@@ -46,11 +47,13 @@ class MyClassViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jsonData.count
+        return self.snapshopKey.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = subjectTableView.dequeueReusableCell(withIdentifier: "subjectCell") as! SubjectTableViewCell
+        let data = snapshopKey[indexPath.row]
+        cell.dataSetSubject(dataControl: data)
         return cell
     }
     
@@ -63,14 +66,18 @@ class MyClassViewController: UIViewController, UITableViewDataSource, UITableVie
         let userFormate = String(user.characters.filter{set.contains($0)})
         
         dataReference = FIRDatabase.database().reference()
-        _dataHandle  = self.dataReference.child("teacher/"+userFormate).observe(.childAdded, with: { (firebaseSnap) in
+        _dataHandle  = self.dataReference.child("teacher/"+userFormate).observe(.value , with: { (firebaseSnap) in
             
-            self.snapshopKey.append(firebaseSnap.key)
-            let snapData = firebaseSnap.value as? [String:AnyObject]
-            self.jsonData.append(JSON(snapData as Any))
-            
-            let indexPathRow = IndexPath(row: self.jsonData.count-1, section: 0)
-            self.subjectTableView.insertRows(at: [indexPathRow], with: .automatic)
+            let snapShot = firebaseSnap.children.allObjects as? [FIRDataSnapshot]
+            print(snapShot)
+            for snap in snapShot!
+            {
+                let snapData = snap.value as? Dictionary <String, AnyObject>
+                let key = snap.key
+                let data = dataControl(majorKey: key, dictionary: snapData!)
+                self.snapshopKey.append(data)
+            }
+           self.subjectTableView.reloadData()
         })
     }
     
